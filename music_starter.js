@@ -9,7 +9,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    let bar_spacing = height / 10;
    let bar_height = width / 12;
    let bar_pos_x = width / 2;
- 
+   let red = color(201, 36, 39)
+   let purple = color(178, 40, 199)
+  
+   let LerpMap = map(bass,0,100,0,1)
+   let middleColor = lerpColor(red,purple,LerpMap)
+  
+   fill(middleColor)
+   ellipse(100,100,100,100)
 
    // vocal bar is red
    fill(200, 0, 0);
@@ -39,5 +46,5 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    // display "words"
    textAlign(CENTER);
    textSize(vocal);
-   text(words, width/2, height/3);
+   //text(words, width/2, height/3);
 }
